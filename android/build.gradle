@@ -1,0 +1,20 @@
+// Top-level build file: configurações comuns para todos os módulos
+// Gradle moderno (8+), compatível com Android Studio Hedgehog/Koala
+
+def spec = plugins {
+  id 'com.android.application' version '8.13.0' apply false
+  id 'com.android.library' version '8.13.0' apply false
+  id 'org.jetbrains.kotlin.android' version '2.2.20' apply false
+}
+spec
+
+apply from: "variables.gradle"
+
+// Repositórios globais
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+  }
+}
